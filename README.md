@@ -1,8 +1,12 @@
-# Getting Started with Create React Index
+# Hey Look! It's another color picker! :D
 
-This project was bootstrapped with [Create React Index](https://github.com/facebook/create-react-app).
+Nice color picker that shows different color combinations depending on the chosen color.
+This project is done using [Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Available Scripts
+visit the live demo at [https://colors.silvamuller.rocks/](https://colors.silvamuller.rocks/)
+
+
+## For local development
 
 In the project directory, you can run:
 
