@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import classNames from "classnames";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import { Color } from "../../hooks/useCombinations";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import classNames from 'classnames';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { Color } from '../../hooks/useCombinations';
 
 const Swatch = styled.div`
   display: flex;
@@ -55,7 +55,7 @@ const Helper = styled.p`
 
 const ColorSwatch: React.FC<{ color: Color }> = ({ color }) => {
   const [isCopied, setIsCopied] = useState<boolean>(false);
-  const helperText = isCopied ? "Copied!" : "Click to copy :)";
+  const helperText = isCopied ? 'Copied!' : 'Click to copy :)';
 
   return (
     <CopyToClipboard text={color.value} onCopy={() => setIsCopied(true)}>

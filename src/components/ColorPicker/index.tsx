@@ -1,8 +1,8 @@
-import React from "react";
-import Picker, { themes } from "react-pick-color";
-import styled from "styled-components";
-import tinycolor, { ColorInput } from "tinycolor2";
-import classNames from "classnames";
+import React from 'react';
+import Picker, { themes } from 'react-pick-color';
+import styled from 'styled-components';
+import tinycolor, { ColorInput } from 'tinycolor2';
+import classNames from 'classnames';
 
 const PickerBox = styled.div`
   padding: 15px;

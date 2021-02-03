@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import tinycolor, { ColorInput, Instance as TCInstance } from "tinycolor2";
+import { useMemo } from 'react';
+import tinycolor, { ColorInput, Instance as TCInstance } from 'tinycolor2';
 
 export interface Color {
   value: string;

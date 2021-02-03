@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import useCombinations, { Color } from "../../hooks/useCombinations";
-import Combination from "./Combination";
-import { ColorInput } from "tinycolor2";
+import React from 'react';
+import styled from 'styled-components';
+import useCombinations, { Color } from '../../hooks/useCombinations';
+import Combination from './Combination';
+import { ColorInput } from 'tinycolor2';
 
 const Wrapper = styled.div`
   display: flex;

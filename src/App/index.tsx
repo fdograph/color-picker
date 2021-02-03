@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import ColorPicker from "../components/ColorPicker";
-import styled from "styled-components";
-import Samples from "../components/Samples";
-import { ColorInput } from "tinycolor2";
+import React, { useState } from 'react';
+import ColorPicker from '../components/ColorPicker';
+import styled from 'styled-components';
+import Samples from '../components/Samples';
+import { ColorInput } from 'tinycolor2';
 
 const Layout = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const Layout = styled.div`
 `;
 
 const App: React.FC = () => {
-  const [color, setColor] = useState<ColorInput>("rgb(255, 70, 135)");
+  const [color, setColor] = useState<ColorInput>('rgb(255, 70, 135)');
 
   return (
     <Layout>

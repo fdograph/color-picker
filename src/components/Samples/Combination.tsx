@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import ColorSwatch from "./ColorSwatch";
-import { Color } from "../../hooks/useCombinations";
+import React from 'react';
+import styled from 'styled-components';
+import ColorSwatch from './ColorSwatch';
+import { Color } from '../../hooks/useCombinations';
 
 interface CombinationProps {
   comb: Color[];
