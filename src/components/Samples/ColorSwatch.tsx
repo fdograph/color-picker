@@ -12,8 +12,6 @@ const Swatch = styled.div`
   flex: 1;
   cursor: pointer;
   padding: 15px;
-  //aspect-ratio: 1 / 1;
-  //height: 120px;
   min-width: 90px;
   box-shadow: 0 0 0 rgba(0, 0, 0, 1);
   transition: all 150ms ease;
@@ -33,7 +31,6 @@ const Swatch = styled.div`
     height: 0;
     display: flex;
     align-items: center;
-
     overflow: hidden;
     transition: all 150ms ease;
   }
@@ -79,7 +76,10 @@ const ColorSwatch: React.FC<{
     <CopyToClipboard text={color.value} onCopy={() => setIsCopied(true)}>
       <Swatch
         className={classNames(
-          { isDark: color.isDark, alwaysVisible },
+          {
+            isDark: color.isDark,
+            alwaysVisible: !!alwaysVisible,
+          },
           className
         )}
         style={{ backgroundColor: color.value }}

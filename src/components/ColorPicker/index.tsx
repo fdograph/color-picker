@@ -38,9 +38,10 @@ const Title = styled.h1`
 const MainSwatch = styled(ColorSwatch)`
   margin: 1em 0 0 0;
   min-width: auto;
-  flex: 0;
+  flex: 1;
   width: 100%;
   padding: 20px;
+  max-height: 6em;
 
   border-width: 1px;
   border-radius: 3px;
