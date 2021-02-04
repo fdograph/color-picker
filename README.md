@@ -1,4 +1,4 @@
-# Hey Look! It's another color picker! :D
+# Hey Look! It's yet another color picker! :D
 
 Nice color picker that shows different color combinations depending on the chosen color.
 This project is done using [Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
