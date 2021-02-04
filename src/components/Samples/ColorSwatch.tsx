@@ -9,10 +9,11 @@ const Swatch = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  flex: 1 0 auto;
   cursor: pointer;
-  padding: 15px;
+  padding: 0 14px;
   min-width: 90px;
+  min-height: 6em;
   box-shadow: 0 0 0 rgba(0, 0, 0, 1);
   transition: all 150ms ease;
 
