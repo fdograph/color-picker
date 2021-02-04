@@ -1,6 +1,6 @@
 {
   "name": "@fdograph/color-picker",
-  "homepage": "https://silvamuller.rocks/color-picker/",
+  "homepage": "https://colors.silvamuller.rocks/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
