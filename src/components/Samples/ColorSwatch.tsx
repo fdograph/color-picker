@@ -36,6 +36,12 @@ const Swatch = styled.div`
     opacity: 0;
     transition: all 150ms ease;
   }
+
+  @media (pointer: coarse) {
+    .helper-text {
+      opacity: 1;
+    }
+  }
 `;
 
 const Text = styled.p`
