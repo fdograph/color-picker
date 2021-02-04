@@ -53,14 +53,17 @@ const Helper = styled.p`
   font-size: 10px;
 `;
 
-const ColorSwatch: React.FC<{ color: Color }> = ({ color }) => {
+const ColorSwatch: React.FC<{ color: Color; className?: string }> = ({
+  color,
+  className,
+}) => {
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const helperText = isCopied ? 'Copied!' : 'Click to copy :)';
 
   return (
     <CopyToClipboard text={color.value} onCopy={() => setIsCopied(true)}>
       <Swatch
-        className={classNames({ isDark: color.isDark })}
+        className={classNames({ isDark: color.isDark }, className)}
         style={{ backgroundColor: color.value }}
       >
         <Text>{color.value}</Text>
