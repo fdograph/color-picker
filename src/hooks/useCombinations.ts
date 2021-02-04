@@ -27,11 +27,11 @@ export const getColorCombination = (c: ColorInput): ColorCombs => {
   const col = tinycolor(c);
   const alpha = col.getAlpha();
   return {
+    triad: processCombination(col.triad(), alpha),
     analogous: processCombination(col.analogous(), alpha),
+    tetrad: processCombination(col.tetrad(), alpha),
     monochromatic: processCombination(col.monochromatic(), alpha),
     splitComplement: processCombination(col.splitcomplement(), alpha),
-    tetrad: processCombination(col.tetrad(), alpha),
-    triad: processCombination(col.triad(), alpha),
   };
 };
 
