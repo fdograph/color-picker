@@ -46,12 +46,9 @@ const MainSwatch = styled(ColorSwatch)`
   border-radius: 3px;
   border-style: solid;
   border-color: #222;
+
   &.isDark {
     border-color: #ededed;
-  }
-
-  .helper-text {
-    opacity: 1;
   }
 `;
 
@@ -83,7 +80,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor }) => {
         theme={themes.dark}
         className="picker-component"
       />
-      <MainSwatch color={c} className={isDarkClass} />
+      <MainSwatch color={c} className={isDarkClass} alwaysVisible />
     </PickerBox>
   );
 };

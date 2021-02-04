@@ -28,18 +28,26 @@ const Swatch = styled.div`
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
   }
 
-  &:hover .helper-text {
-    opacity: 1;
-  }
-
   .helper-text {
     opacity: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
     transition: all 150ms ease;
+  }
+
+  &:hover .helper-text,
+  &.alwaysVisible .helper-text {
+    opacity: 1;
+    height: 1.8em;
   }
 
   @media (pointer: coarse) {
     .helper-text {
       opacity: 1;
+      height: 1.8em;
     }
   }
 `;
@@ -59,17 +67,21 @@ const Helper = styled.p`
   font-size: 10px;
 `;
 
-const ColorSwatch: React.FC<{ color: Color; className?: string }> = ({
-  color,
-  className,
-}) => {
+const ColorSwatch: React.FC<{
+  color: Color;
+  className?: string;
+  alwaysVisible?: boolean;
+}> = ({ color, className, alwaysVisible }) => {
   const [isCopied, setIsCopied] = useState<boolean>(false);
-  const helperText = isCopied ? 'Copied!' : 'Click to copy :)';
+  const helperText = isCopied ? 'Copied!' : 'Tap to copy';
 
   return (
     <CopyToClipboard text={color.value} onCopy={() => setIsCopied(true)}>
       <Swatch
-        className={classNames({ isDark: color.isDark }, className)}
+        className={classNames(
+          { isDark: color.isDark, alwaysVisible },
+          className
+        )}
         style={{ backgroundColor: color.value }}
       >
         <Text>{color.value}</Text>
