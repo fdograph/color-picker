@@ -12,7 +12,7 @@ const Layout = styled.div`
 `;
 
 const App: React.FC = () => {
-  const [color, setColor] = useState<ColorInput>('rgb(255, 70, 135)');
+  const [color, setColor] = useState<ColorInput>('rgb(255, 0, 90)');
 
   return (
     <Layout>
