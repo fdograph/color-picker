@@ -20,6 +20,11 @@ const PickerBox = styled.div`
   &.isDark {
     color: #ededed;
   }
+
+  .picker-component,
+  .picker-component * {
+    box-sizing: unset;
+  }
 `;
 
 const Title = styled.h1`
@@ -29,14 +34,6 @@ const Title = styled.h1`
   font-size: 42px;
   font-weight: bolder;
 `;
-
-// const ColorText = styled.p`
-//   margin: 1em 0 0 0;
-//   text-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-//   text-align: center;
-//   font-size: 28px;
-//   font-weight: 700;
-// `;
 
 const MainSwatch = styled(ColorSwatch)`
   margin: 1em 0 0 0;
@@ -84,6 +81,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor }) => {
           setColor(color.rgb);
         }}
         theme={themes.dark}
+        className="picker-component"
       />
       <MainSwatch color={c} className={isDarkClass} />
     </PickerBox>
