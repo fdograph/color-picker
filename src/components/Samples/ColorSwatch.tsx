@@ -9,6 +9,7 @@ const Swatch = styled.button`
   appareance: none;
   border: none;
   margin: 0;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,8 +22,24 @@ const Swatch = styled.button`
   box-shadow: 0 0 0 rgba(0, 0, 0, 1);
   transition: all 150ms ease;
 
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    outline-offset: 1px;
+  }
+
   &:focus {
-    outline: 3px dashed #333;
+    outline: 1px dashed #333;
+
+    &::before {
+      outline: 1px dashed #ededed;
+    }
   }
 
   color: #333;
@@ -31,6 +48,10 @@ const Swatch = styled.button`
 
     &:focus {
       outline-color: #ededed;
+
+      &::before {
+        outline: 1px dashed #333;
+      }
     }
   }
 
