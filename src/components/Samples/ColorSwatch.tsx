@@ -8,6 +8,7 @@ const Swatch = styled.button`
   -webkit-appareance: none;
   appareance: none;
   border: none;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
