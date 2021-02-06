@@ -14,13 +14,13 @@ const Swatch = styled.button`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1 0 auto;
+  flex: 1;
   cursor: pointer;
   padding: 0 14px;
-  min-width: 90px;
-  min-height: 6em;
+  min-height: 8em;
   box-shadow: 0 0 0 rgba(0, 0, 0, 1);
   transition: all 150ms ease;
+  min-width: 110px;
 
   &::before {
     content: '';
@@ -89,7 +89,7 @@ const Text = styled.p`
   margin: 0;
   text-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
 `;
 
