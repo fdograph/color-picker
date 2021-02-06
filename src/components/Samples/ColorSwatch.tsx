@@ -31,11 +31,12 @@ const Swatch = styled.button`
     width: 100%;
     height: 100%;
     pointer-events: none;
-    outline-offset: 1px;
+    outline-offset: -1px;
   }
 
   &:focus {
     outline: 1px dashed #333;
+    outline-offset: -2px;
 
     &::before {
       outline: 1px dashed #ededed;
