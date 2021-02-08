@@ -22,17 +22,14 @@ const darkSet = (color: ColorInstance, baseAlpha: number): Color[] => {
 
 const lightSet = (color: ColorInstance, baseAlpha: number): Color[] => {
   return processCombination(
-    [
-      color.clone().lighten(10),
-      color.clone().lighten(20),
-      color.clone().lighten(25),
-    ],
+    [color.clone().lighten(10), color.clone().lighten(20)],
     baseAlpha
   );
 };
 
 const scheme = (color: ColorInstance, baseAlpha: number): Color[] => [
   ...darkSet(color, baseAlpha),
+  ...processCombination([color], baseAlpha),
   ...lightSet(color, baseAlpha),
 ];
 
@@ -53,8 +50,7 @@ const generateSchemes = (color: ColorInstance) => {
   return [mono, ...analogous, ...splitComplement, ...triad, ...tetrad];
 };
 
-const useSchemes = (color: ColorInstance): Color[][] => {
-  return useMemo(() => generateSchemes(color), [color]);
-};
+const useSchemes = (color: ColorInstance): Color[][] =>
+  useMemo(() => generateSchemes(color), [color]);
 
 export default useSchemes;

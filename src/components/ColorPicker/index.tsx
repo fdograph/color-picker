@@ -59,9 +59,7 @@ interface ColorPickerProps {
 }
 const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor }) => {
   const updateColor = (color: ColorObject) => {
-    const ci = tinycolor(color.rgb);
-    ci.setAlpha(color.alpha);
-    setColor(ci);
+    setColor(tinycolor(color.rgb).setAlpha(color.alpha));
   };
 
   const c: Color = {
