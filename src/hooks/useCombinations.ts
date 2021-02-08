@@ -1,19 +1,6 @@
 import { useMemo } from 'react';
 import tinycolor, { ColorInput, Instance as TCInstance } from 'tinycolor2';
-
-export interface Color {
-  value: string;
-  isDark: boolean;
-}
-
-export interface ColorCombs {
-  [s: string]: Color[];
-  analogous: Color[];
-  monochromatic: Color[];
-  splitComplement: Color[];
-  tetrad: Color[];
-  triad: Color[];
-}
+import { Color } from './types';
 
 const processCombination = (comb: TCInstance[], alpha: number): Color[] => {
   comb.shift();
@@ -23,19 +10,19 @@ const processCombination = (comb: TCInstance[], alpha: number): Color[] => {
   }));
 };
 
-export const getColorCombination = (c: ColorInput): ColorCombs => {
+export const getColorCombination = (c: ColorInput): Color[][] => {
   const col = tinycolor(c);
   const alpha = col.getAlpha();
-  return {
-    triad: processCombination(col.triad(), alpha),
-    analogous: processCombination(col.analogous(), alpha),
-    tetrad: processCombination(col.tetrad(), alpha),
-    monochromatic: processCombination(col.monochromatic(), alpha),
-    splitComplement: processCombination(col.splitcomplement(), alpha),
-  };
+  return [
+    processCombination(col.triad(), alpha),
+    processCombination(col.analogous(), alpha),
+    processCombination(col.tetrad(), alpha),
+    processCombination(col.monochromatic(), alpha),
+    processCombination(col.splitcomplement(), alpha),
+  ];
 };
 
-const useCombinations = (color: ColorInput): ColorCombs => {
+const useCombinations = (color: ColorInput): Color[][] => {
   return useMemo(() => getColorCombination(color), [color]);
 };
 

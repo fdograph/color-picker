@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import useCombinations, { Color } from '../../hooks/useCombinations';
 import Combination from './Combination';
-import { ColorInput } from 'tinycolor2';
+import { Instance as ColorInstance } from 'tinycolor2';
+import useSchemes from '../../hooks/useSchemes';
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,15 +12,15 @@ const Wrapper = styled.div`
 `;
 
 interface SamplesProps {
-  color: ColorInput;
+  color: ColorInstance;
 }
 
 const Samples: React.FC<SamplesProps> = ({ color }) => {
-  const combinations = useCombinations(color);
+  const combinations = useSchemes(color);
 
   return (
     <Wrapper>
-      {Object.values<Color[]>(combinations).map((comb, i) => (
+      {combinations.map((comb, i) => (
         <Combination key={i} comb={comb} />
       ))}
     </Wrapper>

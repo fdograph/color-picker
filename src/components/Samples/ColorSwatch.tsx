@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Color } from '../../hooks/useCombinations';
+import { Color } from '../../hooks/types';
 
 const Swatch = styled.button`
   -webkit-appareance: none;

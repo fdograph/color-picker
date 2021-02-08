@@ -1,10 +1,10 @@
 import React from 'react';
-import Picker, { themes } from 'react-pick-color';
+import Picker, { ColorObject, themes } from 'react-pick-color';
 import styled from 'styled-components';
-import tinycolor, { ColorInput } from 'tinycolor2';
+import tinycolor, { Instance as ColorInstance } from 'tinycolor2';
 import classNames from 'classnames';
 import ColorSwatch from '../Samples/ColorSwatch';
-import { Color } from '../../hooks/useCombinations';
+import { Color } from '../../hooks/types';
 
 const PickerBox = styled.div`
   padding: 15px;
@@ -54,16 +54,20 @@ const MainSwatch = styled(ColorSwatch)`
 `;
 
 interface ColorPickerProps {
-  color: ColorInput;
-  setColor: (c: ColorInput) => void;
+  color: ColorInstance;
+  setColor: (c: ColorInstance) => void;
 }
 const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor }) => {
-  const colorInstance = tinycolor(color);
-  const c: Color = {
-    value: colorInstance.toRgbString(),
-    isDark: colorInstance.isDark(),
+  const updateColor = (color: ColorObject) => {
+    const ci = tinycolor(color.rgb);
+    ci.setAlpha(color.alpha);
+    setColor(ci);
   };
 
+  const c: Color = {
+    value: color.toRgbString(),
+    isDark: color.isDark(),
+  };
   const isDarkClass = classNames({ isDark: c.isDark });
 
   return (
@@ -75,9 +79,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ color, setColor }) => {
       </Title>
       <Picker
         color={c.value}
-        onChange={(color) => {
-          setColor(color.rgb);
-        }}
+        onChange={updateColor}
         theme={themes.dark}
         className="picker-component"
       />
